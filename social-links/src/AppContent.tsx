@@ -7,8 +7,10 @@ const AppContent = () => {
         <Paper bg={colors.Grey} radius={15} p="xl">
             <Flex direction="column" gap={15} align="center">
                 <Avatar src="avatar.png" alt="profile" size="lg"/>
-                <Title>Hadar Shoshan</Title>
-                <Text>Israel, north and center</Text>
+                <Flex direction="column" align="center">
+                    <Title order={4}>Hadar Shoshan</Title>
+                    <Text c={colors.Green} fw={700}>Israel, North and Center</Text>
+                </Flex>
                 <Text>"Full stack developer."</Text>
                 <>
                     {
