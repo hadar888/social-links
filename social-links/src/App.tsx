@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Center, createTheme } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
+import { emotionTransform, MantineEmotionProvider } from '@mantine/emotion';
+import '@mantine/core/styles.css';
+import AppContent from './AppContent';
+
+const theme = createTheme({
+  
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineEmotionProvider>
+      <MantineProvider theme={theme} stylesTransform={emotionTransform}>
+        <Center>
+          <AppContent/>
+        </Center>
+      </MantineProvider>
+    </MantineEmotionProvider>
   );
 }
 
