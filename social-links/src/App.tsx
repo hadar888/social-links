@@ -23,6 +23,16 @@ const theme = createTheme({
           fontSize: '14px'
         }
       }
+    },
+    Button: {
+      defaultProps: {
+        color: colors.Grey,
+      },
+      styles: {
+        root: {
+          width: '300px',
+        }
+      }
     }
   }
 });
@@ -31,7 +41,7 @@ function App() {
   return (
     <MantineEmotionProvider>
       <MantineProvider theme={theme} stylesTransform={emotionTransform}>
-        <Center bg={colors.DarkGrey}>
+        <Center bg={colors.OffBlack} style={{minHeight: '100vh'}}>
           <AppContent/>
         </Center>
       </MantineProvider>
