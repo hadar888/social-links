@@ -1,10 +1,11 @@
 import React from 'react';
-import { BackgroundImage, Center, createTheme } from '@mantine/core';
+import { Center, createTheme } from '@mantine/core';
 import { MantineProvider } from '@mantine/core';
 import { emotionTransform, MantineEmotionProvider } from '@mantine/emotion';
 import '@mantine/core/styles.css';
 import AppContent from './AppContent';
 import colors from './colors';
+import { ProfileProvider } from './Contexts/ProfileContext';
 
 const theme = createTheme({
   fontFamily: 'Inter',
@@ -41,9 +42,11 @@ function App() {
   return (
     <MantineEmotionProvider>
       <MantineProvider theme={theme} stylesTransform={emotionTransform}>
-        <Center bg={colors.OffBlack} style={{minHeight: '100vh'}}>
-          <AppContent/>
-        </Center>
+        <ProfileProvider>
+          <Center bg={colors.OffBlack} style={{minHeight: '100vh'}}>
+            <AppContent/>
+          </Center>
+        </ProfileProvider>
       </MantineProvider>
     </MantineEmotionProvider>
   );
